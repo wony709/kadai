@@ -42,7 +42,21 @@
                 .then((json) => {
                     // GeoJSONレイヤーを作成
                     L.geoJSON(json)
-                        .bindPopup((layer) => layer.feature.properties.P04_002) // ポップアップで病院名を表示させる
+                        .bindPopup((layer) => {
+                            let props = layer.feature.properties;
+                            let popupText = `
+                                <strong>名称:</strong> ${props.P04_002} <br>
+                                <strong>診療科目:</strong> ${props.P04_004} <br>
+                                ${props.P04_005 ? `<strong>P04_005:</strong> ${props.P04_005} <br>` : ''}
+                                ${props.P04_006 ? `<strong>P04_006:</strong> ${props.P04_006} <br>` : ''}
+                                ${props.P04_007 ? `<strong>P04_006:</strong> ${props.P04_006} <br>` : ''}
+                                ${props.P04_008 ? `<strong>P04_006:</strong> ${props.P04_006} <br>` : ''}
+                                ${props.P04_009 ? `<strong>P04_006:</strong> ${props.P04_006} <br>` : ''}
+                                ${props.P04_0010 ? `<strong>P04_006:</strong> ${props.P04_006} <br>` : ''}
+                            `;
+                            return popupText;
+                        })
+
                         .addTo(map);
                 });
         </script>
