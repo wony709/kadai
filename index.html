@@ -46,13 +46,14 @@
                             let props = layer.feature.properties;
                             let popupText = `
                                 <strong>名称:</strong> ${props.P04_002} <br>
-                                <strong>診療科目:</strong> ${props.P04_004} <br>
-                                ${props.P04_005 ? `<strong>P04_005:</strong> ${props.P04_005} <br>` : ''}
-                                ${props.P04_006 ? `<strong>P04_006:</strong> ${props.P04_006} <br>` : ''}
-                                ${props.P04_007 ? `<strong>P04_006:</strong> ${props.P04_006} <br>` : ''}
-                                ${props.P04_008 ? `<strong>P04_006:</strong> ${props.P04_006} <br>` : ''}
-                                ${props.P04_009 ? `<strong>P04_006:</strong> ${props.P04_006} <br>` : ''}
-                                ${props.P04_0010 ? `<strong>P04_006:</strong> ${props.P04_006} <br>` : ''}
+                                <strong>所在地:</strong> ${props.P04_003} <br>
+                                <strong>診療科目1:</strong> ${props.P04_004} <br>
+                                ${props.P04_005 ? `<strong>診療科目2:</strong> ${props.P04_005} <br>` : ''}
+                                ${props.P04_006 ? `<strong>診療科目3:</strong> ${props.P04_006} <br>` : ''}
+                                ${props.P04_007 ? `<strong>開設者分類:</strong> ${props.P04_006} <br>` : ''}
+                                ${props.P04_008 ? `<strong>病床数:</strong> ${props.P04_006} <br>` : ''}
+                                ${props.P04_009 ? `<strong>救急告示病院:</strong> ${props.P04_006} <br>` : ''}
+                                ${props.P04_0010 ? `<strong>災害拠点病院:</strong> ${props.P04_006} <br>` : ''}
                             `;
                             return popupText;
                         })
